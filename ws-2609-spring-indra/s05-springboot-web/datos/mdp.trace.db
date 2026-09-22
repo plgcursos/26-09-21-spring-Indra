@@ -1,0 +1,6 @@
+2026-09-21 14:06:28.187869+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTES" not found (this database is empty); SQL statement:
+select * from clientes [42104-250]
+2026-09-21 14:07:16.970098+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTES" not found (this database is empty); SQL statement:
+select * from clientes [42104-250]

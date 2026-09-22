@@ -1,0 +1,16 @@
+# Eclipse: configuración local del workspace
+**/.metadata/
+**/.recommenders/
+**/RemoteSystemsTempFiles/
+
+# Maven
+**/target/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.log
+*.tmp
