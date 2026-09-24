@@ -10,16 +10,18 @@ public class Test08jpql {
 		
 		EntityManager em = Emf.getEmf().createEntityManager();
 		
+		String dto = ClienteDto.class.getName();
+		
 		// Clientes pero solo los datos qel Dto
-		String jpql = 
+		String jpql = "select new " + dto +
 				"""
-				select new es.cursospring.jpa.domain.dto.ClienteDto(
-					c.idPersona, c.nombre, concat(c.apellido1, ' ', c.apellido2), c.nroCliente) 
-					from Cliente c
-					where c.idPersona < 30
+				(c.idPersona, c.nombre, concat(c.apellido1, ' ', c.apellido2), c.nroCliente) 
+				from Cliente c
+				where c.idPersona < 30
 				""";
 		TypedQuery<ClienteDto> resu = em.createQuery(jpql, ClienteDto.class);
-		resu.getResultList().forEach(System.out::println);
+//		resu.getResultList().forEach(System.out::println);
+		resu.getResultList().forEach(c -> System.out.println(c.apellidos()));
 		
 		em.close();
 	}
